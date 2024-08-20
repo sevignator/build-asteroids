@@ -10,10 +10,20 @@ def main():
     print(f"Screen height: {SCREEN_HEIGHT}")
 
     pygame.init()
+
+    # Define groups
+    updatable = pygame.sprite.Group()
+    drawable = pygame.sprite.Group()
+
     dt = 0
     clock = pygame.time.Clock()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
+
+    # Add every Player instance to both groups via a static field
+    Player.containers = (updatable, drawable)
+
+    # Initialize player object
+    Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
 
     while True:
         # Enable the window's close button to work
@@ -24,8 +34,14 @@ def main():
         dt = clock.tick(60) / 1000
 
         screen.fill("black")
-        player.update(dt)
-        player.draw(screen)
+
+        # Update every updatable object
+        for obj in updatable:
+            obj.update(dt)
+
+        # Draw every drawable object
+        for obj in drawable:
+            obj.draw(screen)
 
         pygame.display.flip()
 
