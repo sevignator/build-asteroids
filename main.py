@@ -1,3 +1,4 @@
+import sys
 import pygame
 
 from asteroid import Asteroid
@@ -28,8 +29,8 @@ def main():
     Player.containers = (drawable, updatable)
 
     # Initialize objects
-    AsteroidField()
-    Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
+    asteroid_field = AsteroidField()
+    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
 
     # Start the game loop
     while True:
@@ -51,6 +52,12 @@ def main():
         # Draw every drawable object
         for obj in drawable:
             obj.draw(screen)
+
+        # Check for collisions and end game if one occurs
+        for obj in asteroids:
+            if obj.is_colliding(player):
+                print("Game over!")
+                sys.exit()
 
         pygame.display.flip()
 
