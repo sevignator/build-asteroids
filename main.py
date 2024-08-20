@@ -25,14 +25,17 @@ def main():
     # Initialize player object
     Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
 
+    # Start the game loop
     while True:
         # Enable the window's close button to work
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
 
+        # Get the current delta
         dt = clock.tick(60) / 1000
 
+        # Set the background color
         screen.fill("black")
 
         # Update every updatable object
