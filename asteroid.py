@@ -1,6 +1,7 @@
 import pygame
 
 from circleshape import CircleShape
+from constants import ASTEROID_MIN_RADIUS, ASTEROID_MAX_RADIUS
 
 
 class Asteroid(CircleShape):
@@ -23,3 +24,6 @@ class Asteroid(CircleShape):
 
     def split(self):
         self.kill()
+
+        if self.radius <= ASTEROID_MIN_RADIUS:
+            return
