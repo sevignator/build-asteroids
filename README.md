@@ -4,30 +4,31 @@ Personal solution to the [Build Asteroids project](https://www.boot.dev/courses/
 
 ## Requirements
 
-- Python 3
+- Python (3.12+)
 - Pip
 
 ## Set up
 
-1. Create a virtual environment (venv) in the project's root directory:
+1. Open your terminal from the project's root directory.
+2. Create a virtual environment (venv):
 
     ```shell
     python -m venv venv
     ```
 
-2. Activate the virtual environment by running (from the root):
+3. Activate the virtual environment:
 
     ```shell
     source venv/bin/activate
     ```
 
-3. Install the required modules by running (from the root):
+4. Install the required modules:
 
     ```shell
     pip install -r requirements.txt
     ```
 
-4. From the root directory, run the following command:
+5. Run the main script:
 
     ```shell
     python main.py
