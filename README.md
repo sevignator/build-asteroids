@@ -1,6 +1,6 @@
 # Build Asteroids project
 
-Personal solution to the [Build Asteroids project](https://www.boot.dev/courses/build-asteroids) from [Boot.dev](https://www.boot.dev/tracks/backend).
+Personal solution to the [Build Asteroids](https://www.boot.dev/courses/build-asteroids) project from [Boot.dev](https://www.boot.dev/tracks/backend).
 
 ## Requirements
 
@@ -28,7 +28,7 @@ Personal solution to the [Build Asteroids project](https://www.boot.dev/courses/
     pip install -r requirements.txt
     ```
 
-5. Run the main script:
+5. Run the main Python script:
 
     ```shell
     python main.py
